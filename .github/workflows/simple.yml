@@ -9,6 +9,4 @@ jobs:
       - name: echo a string
         run: echo "Hello World"
       - name: Run a multiple steps
-	run: |
-          node -v
-          npm -v
+	run: echo "Hi Sridhar"
