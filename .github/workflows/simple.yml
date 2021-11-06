@@ -3,10 +3,13 @@ name: Shell Commands
 on: [push, pull_request]
 
 jobs:
-  run-shell-command:
+  check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
-        run: echo "Hello World"
-      - name: echo a string
-        run: echo "Sridhar"
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v
+          
